@@ -19,7 +19,7 @@ var vm = new Vue({
     {item:"What movie character would make the best roommate?", round: "Round 1"},
     {item:"What SNL alumni has had the best movie career?", round: "Round 2"},
     {item: "Best Paul Thomas Anderson Movie?", round: "Round 3"},
-    {item: "What’s the all-time most disappointing movie sequel?", round: "Round 4"},
+    {item: "What's the all-time most disappointing movie sequel?", round: "Round 4"},
    { item: "What movie franchise is the most consistently good across all entries?", round: "Round 5"}],
     
     question1SR: "Bargain Bin - Eurotrip or Still Waiting?",
