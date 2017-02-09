@@ -1,0 +1,155 @@
+<div id="mfApp">
+  
+    <div class="editButton" v-on:click="editOn = !editOn">
+     <svg style="width:100%" viewBox="0 0 24 24">
+      <path fill="#6fc3de" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+  </svg>
+  </div>
+  
+  <div class="logo"> 
+    <img src="http://m11.brkmd.com/dnet/media/540/295/2829540/series_logo_color.png?124" width="200">
+  </div>
+
+    <transition name="fade"> <section class="editSec" v-show="editOn">
+    <h2> Create your Game </h2>
+    
+    <div class="editSec">
+      <h4> Players </h4>
+      <div class="editPlayer">
+      <div class="inputWrap">
+        <input onFocus="this.select()" v-model="player1" placeholder="Player One">
+      </div>
+      <div class="inputWrap">
+        <input v-model="player2" placeholder="Player Two">
+      </div>
+      <div class="inputWrap">
+        <input v-model="player3" placeholder="Player Three">
+      </div>  
+    </div>
+    </div>
+    
+    <div class="row">
+    <div class="editSec editQues">
+    <h4> Questions </h4>
+      
+    <div class="editList" v-for="question in questions">
+     
+    <div class="inputWrap">
+      <input class="inputQues" v-model="question.item" placeholder="Quesiton One">
+      </div>
+    </div>
+    
+    </div> 
+    
+    <div class="editSec editQues">
+    <h4> Speed Round Questions </h4>
+    <div class="editList">
+    <div class="inputWrap">
+      <input class="inputQues" v-model="question1SR" placeholder="Quesiton One">
+      </div>
+    </div>
+    
+     <div class="editList">
+    <div class="inputWrap">
+      <input class="inputQues" v-model="question2SR" placeholder="Quesiton One">
+      </div>
+    </div>
+    
+     <div class="editList">
+    <div class="inputWrap">
+      <input class="inputQues" v-model="question3SR" placeholder="Quesiton One">
+      </div>
+    </div>
+    
+     <div class="editList">
+    <div class="inputWrap">
+      <input class="inputQues" v-model="question4SR" placeholder="Quesiton One">
+      </div>
+    </div>
+    
+     <div class="editList">
+    <div class="inputWrap">
+      <input class="inputQues" v-model="question5SR" placeholder="Quesiton One">
+      </div>
+    </div>
+    </div> 
+    </div>  
+    
+  </section>     </transition> 
+  
+  
+  <div class="playersList">
+    <div class="playerDiv">
+      <div class="playerBox" v-on:click="player1Score += 1"> 
+    {{player1}}
+      </div>
+      <div class="playerScore">
+        {{player1Score}}
+      </div>
+    </div>
+    <div class="playerDiv">
+      <div class="playerBox"  v-on:click="player2Score += 1"> 
+        <p>{{player2}}</p>
+      </div>
+      <div class="playerScore">
+         {{player2Score}}
+      </div>
+    </div>
+    <div class="playerDiv">
+      <div class="playerBox"  v-on:click="player3Score += 1"> 
+        <p>{{player3}}</p>
+      </div>
+      <div class="playerScore">
+         {{player3Score}}
+      </div>
+    </div>
+  </div> <!-- playerlist -->
+
+ <div class="quesWrap">
+    <div class="quesRow" v-for="question in questions">
+     <div class="quesNum"> {{question.round}} </div>
+      <div class="ques"> {{question.item}}  </div>
+      
+    </div>     
+    
+    </div> <!-- quesWrap -->
+  
+  <div class="quesWrap">
+    <div class="quesRow speedRound">
+        <div>
+          <p>Speed Round</p> 
+          <div class="srQues" v-on:click="speedRound1 = !speedRound1"> 1 </div>
+          <div class="srQues" v-on:click="speedRound2 = !speedRound2"> 2 </div>
+          <div class="srQues" v-on:click="speedRound3 = !speedRound3"> 3 </div>
+          <div class="srQues" v-on:click="speedRound4 = !speedRound4"> 4 </div>
+          <div class="srQues" v-on:click="speedRound5 = !speedRound5"> 5 </div>
+        </div>
+    </div>
+     <transition name="fade">
+    <div>
+       
+      <div class="quesRow" v-show="speedRound1">
+      <div class="quesNum"> Round 1 </div>
+      <div class="ques"> {{question1SR}} </div>
+    </div>  
+      <div class="quesRow" v-show="speedRound2">
+      <div class="quesNum"> Round 2 </div>
+      <div class="ques">   {{question2SR}}  </div>
+    </div>
+      <div class="quesRow" v-show="speedRound3">
+      <div class="quesNum"> Round 3 </div>
+      <div class="ques">  {{question3SR}}  </div>
+    </div>
+      <div class="quesRow" v-show="speedRound4">
+      <div class="quesNum"> Round 4 </div>
+      <div class="ques">  {{question4SR}}  </div>
+    </div>
+      <div class="quesRow" v-show="speedRound5">
+      <div class="quesNum"> Round 5 </div>
+      <div class="ques">   {{question5SR}}   </div>
+    </div>
+          </transition>
+  </div>
+ 
+
+</div> <!-- mfApp -->
