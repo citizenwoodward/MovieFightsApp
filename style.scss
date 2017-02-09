@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700');
+
+
 $main:#bc2437;
 
 
@@ -5,9 +9,10 @@ $main:#bc2437;
   margin:0;
 }
 
-body {
-  background-color: #f4f0ed;
-  font-family: sans-serif;
+body, input {
+    background-color: rgb(40, 37, 37);
+    font-family: 'Fira Sans', sans-serif;
+    color: #f4f0ed;
 }
 
 .editButton {
@@ -26,8 +31,15 @@ body {
  flex:1
 }
 
-h2,h4 {
+h2, h4 {
   margin: 20px 0 0px 0;
+  text-transform: uppercase;
+  font-weight:600;
+  letter-spacing: .01em; }
+
+  h4 {
+    font-size: 1.35em;
+    letter-spacing: .09em;
 }
 
 .editList {
@@ -87,12 +99,14 @@ input:focus {
 }
 
 .playerBox {
-  font-size:1.7em;
-  font-weight: bold;
+      font-size: 2em;
+    letter-spacing: .07em;
+    font-weight: 700;
   display: flex;
   align-items: center;
   cursor:pointer;
   color:$main;
+  text-transform: uppercase;
 }
 
 .playerScore {
@@ -105,19 +119,16 @@ input:focus {
 .quesWrap {
   width:80%;
   margin: 40px auto;
-/*   border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black; */
   display: flex;
   flex-direction: column;
-/*   background-color: #fff; */
 }
 
 .quesRow {
   display: flex;
   flex-direction: row;
   margin-bottom:20px;
-  background-color: #fff9ff;
+   background-color: #e3dede;
+    color:#000;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -154,10 +165,13 @@ input:focus {
 }
 
 .srQues {
+  background-color:$main;
   display:inline-block;
-  border:1px solid black;
+  font-size:1em;
+  color:#ffffff;
   padding:5px 10px;
   cursor: pointer;
+  margin-left:20px;
 }
 
 .fade-enter-active, .fade-leave-active {
